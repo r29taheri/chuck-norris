@@ -1,0 +1,4 @@
+<app-loading *ngIf="loading"></app-loading>
+<div class="list-group mt-3 mb-3">
+    <a class="list-group-item list-group-item-action" *ngFor="let category of categories" routerLinkActive="active" [routerLink]="'/facts/' + category">{{category}}</a>
+</div>

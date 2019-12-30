@@ -1,0 +1,15 @@
+.not-found-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    color: #555;
+    h2 {
+        font-family: impact;
+        font-size: 12rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+}

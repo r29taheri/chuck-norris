@@ -1,0 +1,12 @@
+<nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="'/'">Chuck Norris</a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                true}">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/facts'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Add</a>
+        </li>
+    </ul>
+</nav>

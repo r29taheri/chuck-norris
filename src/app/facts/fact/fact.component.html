@@ -1,0 +1,24 @@
+<div class="row" *ngIf="!loading">
+    <div class="col-12 mt-3 mb-3">
+        <label for="sort-select">Sort by</label>
+        <select class="custom-select custom-select-sm" [(ngModel)]="sortBy" id="sort-select">
+            <option value="asc">A-Z</option>
+            <option value="desc">Z-A</option>
+        </select>
+    </div>
+    <hr>
+    <div class="col-md-4 mb-3" *ngFor="let fact of facts | sort: sortBy:'description'">
+        <div class="card">
+            <div class="card-header">
+                {{fact.id}}
+            </div>
+            <div class="card-body">
+                <p class="card-text">{{fact.description}}</p>
+            </div>
+            <div class="card-footer">
+                <a (click)="onRemove(fact.id)" class="card-link">Remove</a>
+                <a class="card-link" [routerLink]="'/facts'" [queryParams]="{id: fact.id}">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>

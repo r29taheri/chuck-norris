@@ -1,0 +1,48 @@
+.loading-parent {
+    position: fixed;
+    z-index: 102;
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .loading-box {
+        width: 100px;
+        height: 200px;
+        background-color: #fff;
+        position: relative;
+        transform: rotate(-90deg);
+        &::after {
+            content: '';
+            width: 100%;
+            height: 50%;
+            background-color: #fff;
+            position: absolute;
+            bottom: 0;
+        }
+        &::before {
+            content: '';
+            width: 100%;
+            height: 50%;
+            position: absolute;
+            border-radius: 50%;
+            bottom: 25%;
+            background: #40E0D0;
+            background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+            background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+            animation: 1000ms rotate-circle infinite linear;
+        }
+    }
+}
+@keyframes rotate-circle {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}

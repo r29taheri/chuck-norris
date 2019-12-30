@@ -1,0 +1,14 @@
+<div class="parent" (mousemove)="handleMouseMove($event)">
+    <div class="child">
+        <div class="center-circle" [ngStyle]="{'transform': centerCircleRotateLeft}"></div>
+        <span [style.transform]="leftTransform">"Live your passion"</span>
+    </div>
+    <div class="child">
+        <span [style.transform]="rightTransform">"Live your passion"</span>
+        <div class="cat-slide-container" [style.width]="catOuterContainerEl">
+            <p [routerLink]="['/facts']">See categories
+                <img src="./../../../assets/img/arrow.svg" alt="">
+            </p>
+        </div>
+    </div>
+</div>

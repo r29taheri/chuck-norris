@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-12">
+        <h1 *ngIf="onEdit; else addFactHeader">Edit {{factId}} fact!</h1>
+        <ng-template #addFactHeader>
+            <h1>Add new fact!</h1>
+        </ng-template>
+        
+        <form (ngSubmit)="onSubmit()" #f="ngForm">
+            <div class="form-group">
+                <label>Category</label>
+                {{category}}
+                <select class="custom-select custom-select-sm" ngModel name="category" required>
+                    <!-- <option selected disabled>Open this select menu</option> -->
+                    <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Description</label>
+                <textarea type="text" class="form-control" placeholder="Another input placeholder" ngModel name="description" required>
+                </textarea>
+            </div>
+            <button type="submit" class="btn btn-success" [ngClass]="onEdit ? 'btn-info' : 'btn-success'" [disabled]="!f.valid">
+                <span *ngIf="onEdit; else addItem">Edit</span>
+                <ng-template #addItem>
+                    <span>Add</span>
+                </ng-template>
+                
+            </button>
+        </form>
+    </div>
+</div>
